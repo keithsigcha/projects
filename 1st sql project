@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS sales(
 
 SELECT * FROM sales;
 
-##how many cities are included in the dataset
+#how many cities are included in the dataset
+
 SELECT DISTINCT(CITY) FROM sales;
 
 # what is the average price of the products Walmart offers to its customers 
@@ -32,6 +33,7 @@ SELECT DISTINCT(CITY) FROM sales;
 SELECT avg(unit_price) FROM sales AS avgunitprice;
 
 #what is the total quantity Walmart have sold from each product line?
+
 SELECT product_line, SUM(quantity) AS total_quantity
 FROM sales
 GROUP BY product_line
@@ -95,7 +97,8 @@ COUNT(*) as count
 FROM sales
 GROUP BY payment
 ORDER BY count ASC;
-#WHat is the most common payment method among men?
+
+#What is the most common payment method among men?
 SELECT gender,payment ,COUNT(payment) AS count
 FROM sales
 WHERE gender="male"
